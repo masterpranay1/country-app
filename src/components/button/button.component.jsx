@@ -1,8 +1,8 @@
 import React from "react";
 import './button.styles.scss';
 
-const Button = (props) => {
-  return <button className={`${props.className} ${props.animate ? 'animate' : ''}`}>{props.children}</button>;
+const Button = ({className,children,animate, ...otherProps}) => {
+  return <button className={`${className} ${animate ? 'animate' : ''}`} {...otherProps}>{children}</button>;
 };
 
 export default Button;

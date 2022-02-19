@@ -1,0 +1,25 @@
+.filter {
+    position: relative;
+
+    .filter-dropdown {
+        position: absolute;
+        top: calc(100% + 5px);
+
+        display: flex;
+        flex-direction: column;
+
+        background: var(--clr-sec);
+        color: var(--clr-txt);
+        padding: 0.5em;
+
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+
+        width: 100%;
+        span {
+            text-align: center;
+            margin: 0.1em 0;
+            cursor: pointer;
+        }
+    }
+}
