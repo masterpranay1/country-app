@@ -1,0 +1,12 @@
+.country-list {
+  padding: 2em;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, auto));
+  justify-content: center;
+  gap: 4em;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, minmax(15em, auto));
+  }
+}

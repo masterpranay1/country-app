@@ -1,0 +1,43 @@
+.card {
+  background: var(--clr-sec);
+  color: var(--clr-txt);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+
+  max-width: 20em;
+  width: 15em;
+  border-radius: 5px;
+
+  .image {
+    width: 100%;
+    height: 8em;
+
+    border-radius: 6px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .details {
+    padding: 1.5em;
+
+    h2 {
+      font-size: 1.4em;
+      font-weight: 800;
+    }
+    .population,
+    .region,
+    .capital {
+      font-size: 1em;
+    }
+    .population {
+      margin-top: 1em;
+    }
+    .capital {
+      margin-bottom: 1em;
+    }
+    .bold {
+      font-weight: 600;
+    }
+  }
+}
