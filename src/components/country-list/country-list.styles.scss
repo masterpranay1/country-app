@@ -9,4 +9,8 @@
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, minmax(15em, auto));
   }
+
+  @media (max-width: 425px) {
+      gap : 2em;
+  }
 }

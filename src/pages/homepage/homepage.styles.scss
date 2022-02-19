@@ -1,0 +1,33 @@
+.homepage {
+    width: 100%;
+
+    .searchAndFilter {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        padding: 2em 6em;
+
+        .filter {
+            margin-left: auto;
+        }
+
+        @media (max-width : 768px) {
+            padding: 2em 0.8em;
+
+            flex-direction: column;
+            align-items: flex-start;
+
+            gap: 2em;
+
+            .search {
+                width: 100%;
+            }
+            .filter {
+                margin-left: 0;
+            }
+        }
+    }
+}
