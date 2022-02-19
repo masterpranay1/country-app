@@ -9,7 +9,7 @@ const Search = () => {
     <div className={`search ${dark ? 'dark' : ''}`}>
       <div className="search-icon">&#9740;</div>
       <input
-        type="search"
+        type="text"
         name="search"
         placeholder="Search for a country..."
         autoComplete="off"

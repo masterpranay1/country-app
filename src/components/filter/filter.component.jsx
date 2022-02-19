@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../button/button.component";
 import "./filter.styles.scss";
 
 const FilterDropdown = () => {
@@ -9,7 +10,7 @@ const FilterDropdown = () => {
 const Filter = () => {
   return (
     <div className="filter">
-      <div className="filter-button">Filter by Region</div>
+      <Button>Filter by Region</Button>
       {/* <FilterDropdown className="filter-dropdown"/> */}
     </div>
   );

@@ -5,6 +5,7 @@ import Header from "../../components/header/header.component";
 import CountryList from "../../components/country-list/country-list.component";
 import Search from "../../components/search/search.component";
 import Filter from "../../components/filter/filter.component";
+import Button from "../../components/button/button.component";
 
 const Homepage = () => {
   return (
@@ -15,6 +16,8 @@ const Homepage = () => {
         <Filter className="filter"/>
       </div>
       <CountryList />
+
+      <Button className="load-more" animate>Load More</Button>
     </div>
   );
 };

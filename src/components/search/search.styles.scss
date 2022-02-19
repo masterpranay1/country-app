@@ -6,7 +6,7 @@
 
     background: var(--clr-sec);
     color: var(--clr-ter);
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 1px 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
     border-radius: 2px;
 
     padding: 0.4em 1.2em;
@@ -16,9 +16,17 @@
     .search-icon {
         transform: rotate(110deg);
         opacity: 0.8;
+
+        width: 10%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     input {
+        width: 90%;
+
         border: none;
         outline: none;
         background-color: var(--clr-sec);
@@ -31,9 +39,16 @@
         opacity: 0.8;
         font-size: 1rem;
     }
+    input[type="search" i]::-webkit-search-cancel-button {
+        color: red;
+        background: green;
+
+        cursor: pointer;
+    }
 
     @media (max-width : 768px) {
         justify-content: left;
+        gap: 0;
     }
 }
 
