@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  --clr-pri : hsl(0, 0%, 98%);
+  --clr-sec : hsl(0, 0%, 100%);
+  --clr-ter : hsl(0, 0%, 52%);
+  --clr-txt : hsl(200, 15%, 8%);
+}
+
+.App.dark-theme {
+  --clr-pri : hsl(207, 26%, 17%);
+  --clr-sec : hsl(209, 23%, 22%);
+  --clr-ter : hsl(209, 23%, 22%);
+  --clr-txt : hsl(0, 0%, 100%);
+}
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--clr-pri);
+}
