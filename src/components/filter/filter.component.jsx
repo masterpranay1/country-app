@@ -4,11 +4,10 @@ import "./filter.styles.scss";
 
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { countryData } from "../../redux/search/search.selectors";
 import { filterByContinent } from "../../redux/search/search.reducer";
 
 const FilterDropdown = ({ className, ...otherProps }) => {
-  const data = useSelector(countryData);
+  const data = useSelector((state) => state.search.countries);
   const continents = [];
   data.forEach((e) => {
     if (!continents.includes(e.region)) continents.push(e.region);
@@ -18,7 +17,12 @@ const FilterDropdown = ({ className, ...otherProps }) => {
   return (
     <div className="filter-dropdown" {...otherProps}>
       {continents.map((continent) => (
-        <span key={continent} onClick={() => dispatch(filterByContinent(continent))}>{continent}</span>
+        <span
+          key={continent}
+          onClick={() => dispatch(filterByContinent(continent))}
+        >
+          {continent}
+        </span>
       ))}
     </div>
   );

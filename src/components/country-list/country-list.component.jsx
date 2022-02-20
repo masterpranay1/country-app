@@ -3,14 +3,14 @@ import "./country-list.styles.scss";
 
 import CountryCard from "../../components/country-card/country-card.component";
 import Button from "../button/button.component";
-import { countryData } from "../../redux/search/search.selectors";
+import { selectCountryData } from "../../redux/search/search.selectors";
 
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const CountryList = () => {
-  const data = useSelector(countryData);
+  const data = useSelector(selectCountryData);
 
   const [numOfCountries, updateCount] = useState(8);
 

@@ -5,9 +5,9 @@ const INITIAL_STATE = {
   isLoading: true,
   dataLoaded: false,
   isContinentFilterOn: false,
+  continentName: "",
   isSearchFilterOn: false,
   searchText: "",
-  continentName: "",
 };
 
 const searchSlice = createSlice({
@@ -29,7 +29,7 @@ const searchSlice = createSlice({
     },
     filterByName: (state, action) => {
       console.log(action.payload);
-      if (action.payload == "") {
+      if (action.payload === "") {
         state.isSearchFilterOn = false;
         state.searchText = action.payload;
       } else {
