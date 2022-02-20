@@ -36,14 +36,17 @@ const CountryList = () => {
             />
           ))}
       </div>
-
-      <Button
-        className="load-more"
-        animate
-        onClick={() => updateCount(numOfCountries + 8)}
-      >
-        Load More
-      </Button>
+      {data.length > numOfCountries ? (
+        <Button
+          className="load-more"
+          animate
+          onClick={() => updateCount(numOfCountries + 8)}
+        >
+          Load More
+        </Button>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

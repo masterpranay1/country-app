@@ -4,7 +4,7 @@ import "./filter.styles.scss";
 
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { filterByContinent } from "../../redux/search/search.reducer";
+import { filterByContinent, filterToggle } from "../../redux/search/search.reducer";
 
 const FilterDropdown = ({ className, ...otherProps }) => {
   const data = useSelector((state) => state.search.countries);
@@ -29,15 +29,16 @@ const FilterDropdown = ({ className, ...otherProps }) => {
 };
 
 const Filter = () => {
-  const [drop, setDrop] = useState(0);
+  const isFilterClosed = useSelector((state) => state.search.isFilterToggle);
+  const dispatch = useDispatch();
   const handleDropdown = () => {
-    setDrop(!drop);
-  };
+    dispatch(filterToggle({value : !isFilterClosed}));
+  }
   return (
     <div className="filter">
-      <Button onClick={handleDropdown}>Filter by Region</Button>
-      {drop ? (
-        <FilterDropdown className="filter-dropdown" onClick={handleDropdown} />
+      <Button onClick={handleDropdown} className="filter-button">Filter by Region</Button>
+      {isFilterClosed ? (
+        <FilterDropdown className="filter-dropdown" onClick={handleDropdown} className="filter-button"/>
       ) : (
         ""
       )}

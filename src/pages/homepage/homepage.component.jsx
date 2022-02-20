@@ -5,7 +5,11 @@ import Header from "../../components/header/header.component";
 import CountryList from "../../components/country-list/country-list.component";
 import Search from "../../components/search/search.component";
 import Filter from "../../components/filter/filter.component";
-import { dataIsLoading, dataLoaded } from "../../redux/search/search.reducer";
+import {
+  dataIsLoading,
+  dataLoaded,
+  filterToggle,
+} from "../../redux/search/search.reducer";
 
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -25,7 +29,15 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className="homepage">
+    <div
+      className="homepage"
+      onClick={(e) => {
+        if (!e.target.classList.contains("filter-button")) {
+          dispatch(filterToggle({value : false}));
+          // console.log("homepage but not filter pressed");
+        }
+      }}
+    >
       <Header />
       <div className="searchAndFilter">
         <Search className="search" />

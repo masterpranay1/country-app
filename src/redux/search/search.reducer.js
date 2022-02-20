@@ -8,6 +8,7 @@ const INITIAL_STATE = {
   continentName: "",
   isSearchFilterOn: false,
   searchText: "",
+  isFilterToggle: false,
 };
 
 const searchSlice = createSlice({
@@ -37,6 +38,9 @@ const searchSlice = createSlice({
         state.searchText = action.payload;
       }
     },
+    filterToggle: (state, action) => {
+      state.isFilterToggle = action.payload.value;
+    },
     reset: (state) => INITIAL_STATE,
   },
 });
@@ -47,5 +51,6 @@ export const {
   filterByContinent,
   filterByName,
   reset,
+  filterToggle,
 } = searchSlice.actions;
 export default searchSlice.reducer;
