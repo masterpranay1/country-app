@@ -1,9 +1,9 @@
 import React from "react";
 import "./country-card.styles.scss";
 
-const CountryCard = () => {
+const CountryCard = ({...props}) => {
   return (
-    <div className="card">
+    <div className="card" {...props}>
       <div className="image"></div>
       <div className="details">
         <h2 className="name">Country Name</h2>
