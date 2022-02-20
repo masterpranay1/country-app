@@ -2,22 +2,25 @@ import React from "react";
 import "./country-card.styles.scss";
 
 const CountryCard = ({...props}) => {
+  let {name, region, capital, population, flags} = props;
   return (
     <div className="card" {...props}>
-      <div className="image"></div>
+      <div className="image">
+        <img src={flags.png} alt="flag" />
+      </div>
       <div className="details">
-        <h2 className="name">Country Name</h2>
+        <h2 className="name">{name.common}</h2>
         <div className="population">
           <span className="bold">Population: </span>
-          data
+          {population}
         </div>
         <div className="region">
           <span className="bold">Region: </span>
-          data
+          {region}
         </div>
         <div className="capital">
           <span className="bold">Capital: </span>
-          data
+          {capital}
         </div>
       </div>
     </div>

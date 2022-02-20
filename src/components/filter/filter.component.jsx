@@ -3,13 +3,22 @@ import Button from "../button/button.component";
 import "./filter.styles.scss";
 
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { countryData } from "../../redux/search/search.selectors";
+import { filterByContinent } from "../../redux/search/search.reducer";
 
 const FilterDropdown = ({ className, ...otherProps }) => {
-  const list = [1, 2, 3, 4, 5, 6];
+  const data = useSelector(countryData);
+  const continents = [];
+  data.forEach((e) => {
+    if (!continents.includes(e.region)) continents.push(e.region);
+  });
+
+  const dispatch = useDispatch();
   return (
     <div className="filter-dropdown" {...otherProps}>
-      {list.map((continent) => (
-        <span key={continent}>C Name</span>
+      {continents.map((continent) => (
+        <span key={continent} onClick={() => dispatch(filterByContinent(continent))}>{continent}</span>
       ))}
     </div>
   );
