@@ -41,7 +41,12 @@ const searchSlice = createSlice({
     filterToggle: (state, action) => {
       state.isFilterToggle = action.payload.value;
     },
-    reset: (state) => INITIAL_STATE,
+    reset: (state) => {
+      state.isContinentFilterOn= false;
+      state.continentName= "";
+      state.isSearchFilterOn= false;
+      state.searchText= "";
+    },
   },
 });
 

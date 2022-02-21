@@ -6,6 +6,7 @@ import { filterByName } from "../../redux/search/search.reducer";
 
 const Search = () => {
   const dark = useSelector((state) => state.theme.hidden);
+  const text = useSelector((state) => state.search.searchText);
   const dispatch = useDispatch();
   return (
     <div className={`search ${dark ? "dark" : ""}`}>
@@ -16,6 +17,7 @@ const Search = () => {
         placeholder="Search for a country..."
         autoComplete="off"
         onChange={(e) => dispatch(filterByName(e.target.value))}
+        value={text === "" ? "" : text}
       />
     </div>
   );
