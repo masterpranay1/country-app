@@ -23,7 +23,7 @@ const Homepage = () => {
 
     dispatch(dataIsLoading());
     const cData = await fetch(
-      "https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags"
+      "https://restcountries.com/v2/all?fields=name,population,region,capital,flags,cioc"
     );
     dispatch(dataLoaded(await cData.json()));
   }, []);

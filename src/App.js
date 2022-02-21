@@ -13,7 +13,7 @@ function App() {
     <div className={`App ${dark ? 'dark-theme' : ''}`}>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path='/country' element={<CountryPage />} />
+        <Route path='/country/name/:name' element={<CountryPage />} />
       </Routes>
     </div>
   );

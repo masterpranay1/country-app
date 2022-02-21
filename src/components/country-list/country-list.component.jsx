@@ -7,7 +7,6 @@ import { selectCountryData } from "../../redux/search/search.selectors";
 
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 const CountryList = () => {
   const data = useSelector(selectCountryData);
@@ -15,11 +14,6 @@ const CountryList = () => {
   const [numOfCountries, updateCount] = useState(8);
 
   const loading = useSelector((state) => state.search.isLoading);
-
-  const navigate = useNavigate();
-  const routeToCountryPage = () => {
-    navigate("/country");
-  };
 
   return loading ? (
     <Button className="loading">Loading...</Button>
@@ -31,7 +25,6 @@ const CountryList = () => {
           .map((country, index) => (
             <CountryCard
               key={index}
-              onClick={routeToCountryPage}
               {...country}
             />
           ))}

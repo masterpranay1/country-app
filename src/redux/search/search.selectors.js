@@ -11,12 +11,12 @@ export const selectCountryData = (state) => {
   if (isContinentFilterOn) {
     return countries.filter((country) => {
       const {
-        name: { common },
+        name,
         region,
       } = country;
       return (
         continentName.toLowerCase() === region.toLowerCase() &&
-        common.toLowerCase().includes(searchText.toLowerCase())
+        name.toLowerCase().includes(searchText.toLowerCase())
       );
     });
   }
@@ -24,7 +24,7 @@ export const selectCountryData = (state) => {
   // case 2
   if (isSearchFilterOn) {
     return countries.filter((country) => {
-      return country.name.common.toLowerCase().includes(searchText.toLowerCase());
+      return country.name.toLowerCase().includes(searchText.toLowerCase());
     });
   }
 
