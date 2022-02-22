@@ -1,44 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# COUNTRY APP
 
-## Available Scripts
+![Country App](./screenshots/country-app.svg)
+![Made with](./screenshots/made-with.svg) ![React](./screenshots/react.svg) ![Redux](./screenshots//redux.svg)
 
-In the project directory, you can run:
+A React Application showing all the countries of the world fetching data from a API. 😻
 
-### `npm start`
+[Live Link](https://country-app-pranay.herokuapp.com/) (Hosted Using Heroku)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is a challenge from [Front End Mentor](https://www.frontendmentor.io/solutions/country-app-using-react-redux-and-react-router-dW1pmiPOz)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Tools Used
 
-### `npm test`
+- React
+- Redux
+- React Router v6
+- React Hooks
+- Country Api
+- SASS ( for styling )
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## FEATURES 👇
 
-### `npm run build`
+### Country Api
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Rest Country Api](https://restcountries.com) is used to fetch all the data.
+Fetching is done in **three** ways:-
+1. All the data with limited options.
+2. Data of a particular country by name.
+3. Data of a list of countries by their codes.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    `React Hooks` are used to mount the data after calling them. And updating only if needed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Multi Page Routing
 
-### `npm run eject`
+There are `two` main pages in this application.
+1. Homepage
+2. Details Page
+    This Detail page is dynamic ( passing country name as `url` as `parameter`) and display the detail of the country user wish to view.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Homepage](./screenshots/home-page.png)
+![Detail Page](./screenshots/country-detail-page.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Also We can go back with the `Go Back` Button.**
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Go Back](./screenshots/go-back.gif)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**We can route throgh `borders` in the details page**
 
-## Learn More
+![Searching Through borders](./screenshots/border.gif)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**There is `404 Page`**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![404-page](./screenshots/error-404.png)
+
+### Searching and Filtering 
+
+- We can search data by `Name`
+- We can filter data by `Region`
+
+This all features are setup using `Redux`. There are dedicated `dispatch` functions for many **events**.
+
+![Search](./screenshots/search-by-name.png)
+![filter](./screenshots/filter-by-continent.png) ![filter-display](./screenshots/filter-name.png)
+
+**If the Searched country is not found, it displays a error message**
+
+![not-found](./screenshots/not-found.png)
+
+### Dark Theme , MicroAnimations, Load More Option
+
+- There is Theme Preference choice.
+
+![theme](./screenshots/homepage-dark.png)
+
+- There are small microanimations.
+- There is a special load more button on the home page which, on click, shows more countries.
+[ This is hidden if all the countries are displayed ]
+
+![load-more](./screenshots/load-more-button.png)
+
+### Fully Responsive
+
+![homepage](./screenshots/responsive-1.png)
+![details page](./screenshots/responsive-2.png)
+
+## Author
+
+Hey!! I am Pranay Raj. I am passionate in Web Devlopment and Making Creative Projects is like my hobby :)
+
+You can connect me:
+
+[![linkedin-image](./screenshots/linked-in.svg)](https://www.linkedin.com/in/masterpranay/) [![Github-image](./screenshots/masterpranay.svg)](https://github.com/masterpranay1)
