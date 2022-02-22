@@ -26,3 +26,25 @@
   font-family: 'Nunito Sans', sans-serif;
   background: var(--clr-pri);
 }
+
+.error-404 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  animation: animate 5s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+  50% {
+    transform: scale(1.1) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
