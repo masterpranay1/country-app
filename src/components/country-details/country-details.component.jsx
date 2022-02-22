@@ -71,6 +71,9 @@ const CountryDetailsContainer = () => {
                 }}>{e}</Button>
               })
             }
+            {
+              bData.length === 0 ? <Button>No Border Countries</Button> : ''
+            }
         </div>
       </div>
 
