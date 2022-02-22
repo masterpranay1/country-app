@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 const CountryList = () => {
   const data = useSelector(selectCountryData);
   const searchText = useSelector(state => state.search.searchText);
+  const continentText = useSelector(state => state.search.continentName);
 
   const [numOfCountries, updateCount] = useState(8);
 
@@ -31,7 +32,11 @@ const CountryList = () => {
         data.length === 0 && !searchText ? <Button className="load-more" animate>No Countries</Button> : '' 
       }
       {
-        data.length === 0 && searchText ? <Button className="load-more" animate>No Countries Found with name <b>"{searchText}"</b></Button>:''
+        data.length === 0 && searchText ?
+        <Button className="load-more" animate>No Countries Found with name <b>"{searchText}"</b> 
+        {continentText ? <span> in <b>"{continentText}"</b> </span>: ''}
+        </Button>
+        :''
       }
       {data.length > numOfCountries ? (
         <Button

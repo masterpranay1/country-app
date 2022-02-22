@@ -30,13 +30,17 @@ const FilterDropdown = ({ className, ...otherProps }) => {
 
 const Filter = () => {
   const isFilterClosed = useSelector((state) => state.search.isFilterToggle);
+  const isContinentFilterOn = useSelector(state => state.search.isContinentFilterOn);
+  const continentFilterText = useSelector(state => state.search.continentName);
   const dispatch = useDispatch();
   const handleDropdown = () => {
     dispatch(filterToggle({value : !isFilterClosed}));
   }
   return (
     <div className="filter">
-      <Button onClick={handleDropdown} className="filter-button">Filter by Region</Button>
+      <Button onClick={handleDropdown} className="filter-button">Filter by Region
+      {isContinentFilterOn ? `: ${continentFilterText}` : ''}
+      </Button>
       {isFilterClosed ? (
         <FilterDropdown className="filter-dropdown" onClick={handleDropdown} className="filter-button"/>
       ) : (
