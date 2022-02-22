@@ -29,7 +29,6 @@ const searchSlice = createSlice({
       state.continentName = action.payload;
     },
     filterByName: (state, action) => {
-      console.log(action.payload);
       if (action.payload === "") {
         state.isSearchFilterOn = false;
         state.searchText = action.payload;

@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 
 const CountryList = () => {
   const data = useSelector(selectCountryData);
+  const searchText = useSelector(state => state.search.searchText);
 
   const [numOfCountries, updateCount] = useState(8);
 
@@ -23,12 +24,15 @@ const CountryList = () => {
         {data
           .filter((country, index) => index < numOfCountries)
           .map((country, index) => (
-            <CountryCard
-              key={index}
-              {...country}
-            />
+            <CountryCard key={index} {...country} />
           ))}
       </div>
+      {
+        data.length === 0 && !searchText ? <Button className="load-more" animate>No Countries</Button> : '' 
+      }
+      {
+        data.length === 0 && searchText ? <Button className="load-more" animate>No Countries Found with name <b>"{searchText}"</b></Button>:''
+      }
       {data.length > numOfCountries ? (
         <Button
           className="load-more"
