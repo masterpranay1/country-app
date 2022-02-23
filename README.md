@@ -1,6 +1,6 @@
 # COUNTRY APP
 
-![Country App](./screenshots/country-app.svg)
+![Country App](./screenshots/country-app.svg) <br/>
 ![Made with](./screenshots/made-with.svg) ![React](./screenshots/react.svg) ![Redux](./screenshots//redux.svg)
 
 A React Application showing all the countries of the world fetching data from a API. 😻
