@@ -8,7 +8,7 @@
 
 A React Application showing all the countries of the world fetching data from a API. 😻
 
-[Live Link](https://country-app-pranay.herokuapp.com/) (Hosted Using Heroku)
+[Live Link](https://country-app-3krm.onrender.com) (Hosted Using Render)
 
 This is a challenge from [Front End Mentor](https://www.frontendmentor.io/solutions/country-app-using-react-redux-and-react-router-dW1pmiPOz)
 
